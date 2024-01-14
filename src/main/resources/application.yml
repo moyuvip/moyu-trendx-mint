@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/web3?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      enabled: true
+
+mybatis-plus:
+  # 配置扫描xml
+  mapper-locations:
+    - classpath:mapper/*.xml
+  # 实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: com.moyu.bean
+  configuration:
+    map-underscore-to-camel-case: true
+server:
+  port: 8080
+
+## 单个文件大小
+#.http.multipart.max-file-size=100MB
+#  # 总上传的数据大小
+#spring.http.multipart.max-request-size=100MB
+
